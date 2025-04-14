@@ -30,7 +30,7 @@ def csv_writer(output_file_name, modified_list):
             writer.writerow(line)
 def main():
     data_dir="./data/"
-    output_data_dir="./data/output/"
+    output_data_dir="./output/"
     input_file_name = ["ACC.csv", "AMBUJACEM.csv", "JKCEMENT.csv", "RAMCOCEM.csv", "ULTRACEMCO.csv", "INDIACEM.csv", "SHREECEM.csv"]
     for file in input_file_name:
         input_list=csv_list_parser(data_dir+file)
