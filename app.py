@@ -29,11 +29,13 @@ def csv_writer(output_file_name, modified_list):
         for line in modified_list:
             writer.writerow(line)
 def main():
-    input_file_name = "./data/ACC.csv"
-    output_file_name = "./data/output/ACC.csv"
-    input_list=csv_list_parser(input_file_name)
-    modified_list=col_remover(input_list)
-    csv_writer(output_file_name, modified_list)
+    data_dir="./data/"
+    output_data_dir="./data/output/"
+    input_file_name = ["ACC.csv", "AMBUJACEM.csv", "JKCEMENT.csv", "RAMCOCEM.csv", "ULTRACEMCO.csv", "INDIACEM.csv", "SHREECEM.csv"]
+    for file in input_file_name:
+        input_list=csv_list_parser(data_dir+file)
+        modified_list=col_remover(input_list)
+        csv_writer(output_data_dir+file, modified_list)
 
 if __name__ == "__main__":
     main()
