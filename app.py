@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import csv
+import os
 from typing import List
 def csv_list_parser(input_file_name: str)-> List[List[str]]:
     r_list=[]
@@ -50,9 +51,11 @@ def csv_writer(output_file_name, modified_list):
         writer = csv.writer(file, delimiter=',')
         for line in modified_list:
             writer.writerow(line)
+
 def main():
     data_dir="./data/"
     output_data_dir="./output/"
+    os.makedirs(output_data_dir, exist_ok=True)
     input_file_name = ["ACC.csv", "AMBUJACEM.csv", "JKCEMENT.csv", "RAMCOCEM.csv", "ULTRACEMCO.csv", "INDIACEM.csv", "SHREECEM.csv"]
     for file in input_file_name:
         input_list=csv_list_parser(data_dir+file)
