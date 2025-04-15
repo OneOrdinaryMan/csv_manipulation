@@ -56,11 +56,11 @@ def main():
     data_dir="./data/"
     output_data_dir="./output/"
     os.makedirs(output_data_dir, exist_ok=True)
-    input_file_name = ["ACC.csv", "AMBUJACEM.csv", "JKCEMENT.csv", "RAMCOCEM.csv", "ULTRACEMCO.csv", "INDIACEM.csv", "SHREECEM.csv"]
+    input_file_name = os.listdir(data_dir)
     for file in input_file_name:
         input_list=csv_list_parser(data_dir+file)
         modified_list=col_remover(input_list)
         csv_writer(output_data_dir+file, modified_list)
-
+        
 if __name__ == "__main__":
     main()
