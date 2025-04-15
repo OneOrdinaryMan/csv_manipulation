@@ -20,9 +20,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+#imports
 import csv
 import os
 from typing import List
+
+# function definitions
 def csv_list_parser(input_file_name: str)-> List[List[str]]:
     r_list=[]
     with open(input_file_name, newline='') as file:
@@ -51,7 +54,7 @@ def csv_writer(output_file_name, modified_list):
         writer = csv.writer(file, delimiter=',')
         for line in modified_list:
             writer.writerow(line)
-
+# main
 def main():
     data_dir="./data/"
     output_data_dir="./output/"
