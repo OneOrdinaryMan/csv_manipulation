@@ -24,7 +24,7 @@ import pandas as pd
 import re
 
 #  Directory with your CSV files
-input_dir = "./output"
+input_dir = "./output/"
 
 
 #  Extract year from column names like 'Mar-24', 'Dec-19'
