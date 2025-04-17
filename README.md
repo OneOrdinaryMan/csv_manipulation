@@ -26,8 +26,8 @@ python -m pip install -r requirements.txt # for windows
 Make sure the directory you're running the app is the working directory of the code.
 
 ```
-python3 -m app #for unix
-python -m app #for windows
+python3 csv_manipulator.py #for unix
+python csv_manipulator.py #for windows
 ```
 # License
 This project is under MIT License.
