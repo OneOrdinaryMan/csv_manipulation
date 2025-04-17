@@ -56,8 +56,8 @@ def csv_writer(output_file_name, modified_list):
             writer.writerow(line)
 # main
 def main():
-    data_dir="./data/"
-    output_data_dir="./output/"
+    data_dir="./data1/"
+    output_data_dir="./output1/"
     os.makedirs(output_data_dir, exist_ok=True)
     input_file_name = os.listdir(data_dir)
     for file in input_file_name:
