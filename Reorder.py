@@ -1,17 +1,17 @@
 # MIT License
-# 
+#
 # Copyright (c) 2025 Srivathsan Sudarsanan, Divyatejas Venkatesh
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -24,7 +24,8 @@ import pandas as pd
 import re
 
 #  Directory with your CSV files
-input_dir = r"D:\Final Year Project\csv_manipulation\output1"
+input_dir = "./output"
+
 
 #  Extract year from column names like 'Mar-24', 'Dec-19'
 def extract_year(col):
@@ -33,6 +34,7 @@ def extract_year(col):
         year = int(match.group(1))
         return 2000 + year if year < 50 else 1900 + year
     return 9999  # push non-year columns to end
+
 
 #  Loop through CSV files
 for filename in os.listdir(input_dir):
