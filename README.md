@@ -15,6 +15,7 @@ python -m venv venv
 # Installing the dependencies
 This package uses following dependencies,
 - chardet [For auto detecting encoding and avoiding read errors ].
+- pandas [For numericals]
 
 To install the dependencies use,
 ```
