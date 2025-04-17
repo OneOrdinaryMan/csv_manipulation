@@ -25,6 +25,7 @@ import csv
 import os
 from typing import List
 import chardet
+from csv_manipulator import reorder
 
 
 # function definitions
@@ -72,6 +73,7 @@ def main():
         input_list = csv_list_parser(data_dir + file)
         modified_list = col_remover(input_list)
         csv_writer(output_data_dir + file, modified_list)
+    reorder()
 
 
 if __name__ == "__main__":
