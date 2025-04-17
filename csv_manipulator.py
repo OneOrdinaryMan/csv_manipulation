@@ -25,7 +25,7 @@ import csv
 import os
 from typing import List
 import chardet
-from csv_manipulator import reorder
+import csv_manipulator
 
 
 # function definitions
@@ -38,6 +38,20 @@ def csv_list_parser(input_file_name: str) -> List[List[str]]:
         for row in rows:
             r_list.append(row)
     return r_list
+
+
+def row_remover(input_list: List[List[str]]) -> List[List[str]]:
+    output_list = []
+    removing_elements = [
+        "Per Share Ratios",
+        "Profitability Ratios",
+        "Liquidity Ratios",
+        "Valuation Ratios",
+    ]
+    for row in input_list:
+        if row[0] not in removing_elements:
+            output_list.append(row)
+    return output_list
 
 
 def col_remover(input_list: List[List[str]]) -> List[List[str]]:
@@ -61,6 +75,7 @@ def csv_writer(output_file_name, modified_list):
         writer = csv.writer(file, delimiter=",")
         for line in modified_list:
             writer.writerow(line)
+    print("Created the " + output_file_name + " file.")
 
 
 # main
@@ -71,9 +86,10 @@ def main():
     input_file_name = os.listdir(data_dir)
     for file in input_file_name:
         input_list = csv_list_parser(data_dir + file)
+        input_list = row_remover(input_list)
         modified_list = col_remover(input_list)
         csv_writer(output_data_dir + file, modified_list)
-    reorder()
+    csv_manipulator.reorder()
 
 
 if __name__ == "__main__":
